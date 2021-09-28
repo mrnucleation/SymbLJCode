@@ -17,7 +17,7 @@ nParameters
 ubounds = [ 4.1 for x in range(nParameters)]
 lbounds = [-4.1 for x in range(nParameters)]
 
-startsize = [(ub-lb)*0.0005 for lb, ub in zip(lbounds, ubounds)]
+startsize = [(ub-lb)*0.05 for lb, ub in zip(lbounds, ubounds)]
 
 simplex = StephSimplex(objfunc)
 results, score = simplex.runopt(

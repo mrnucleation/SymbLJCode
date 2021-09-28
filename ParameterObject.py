@@ -394,7 +394,7 @@ class ParameterData(object):
                 minval = eng
                 initialguess = struct
 #        epochscale = [100, 100, 200, 500, 700, 1000]
-        epochscale = [200]
+        epochscale = [20000]
         try:
             nepoch = epochscale[depth]
         except IndexError:

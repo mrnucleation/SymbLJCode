@@ -63,7 +63,7 @@ except:
     ubounds = [ 6.0+0.5*zonewidth for x in range(nParameters)]
     lbounds = [-6.0-0.5*zonewidth for x in range(nParameters)]
     startset = [ 0.0  for lb, ub in zip(lbounds, ubounds) ]
-depthscale = [10.0, 0.8, 0.1]
+depthscale = [10.0, 0.8, 0.5, 0.25, 0.1]
 #depthscale = [sqrt(nParameters)*x for x in depthscale]
 #[300, 50, 2500, 50, 400, 8, 1]
 
@@ -93,7 +93,7 @@ if restartrun:
     tree.autoscaleconstant(scaleboost=0.5)
 else:
 #    expandhead_latin(52, tree, lbounds, ubounds)
-    expandhead_radiallatin(52, len(ubounds), tree, 1e-2)
+    expandhead_radiallatin(22, len(ubounds), tree, 1e-2)
     tree.expandfromdata(newdata=indata)
     tree.expand(nExpansions=1, savefile=restartfile)
 #    tree.savetree(restartfile)
@@ -124,7 +124,7 @@ for iLoop in range(1,1550):
         tree.minexpand(scaleconst=1e0)
         tree.minexpand(scaleconst=1e-6)
     tree.setplayouts(10)
-    expandhead_radiallatin(5, len(ubounds), tree, 1e-7)
+    expandhead_radiallatin(5, len(ubounds), tree, 1e-3)
 #    expandhead_latin(5, tree, lbounds, ubounds)
     tree.setplayouts(20)
     tree.savetree(restartfile)

@@ -96,8 +96,8 @@ else:
     nteststruct = round(0.2*ntotalstruct)
     ntrainstruct = ntotalstruct-nteststruct
 
-    fusedstruct = np.random.uniform(0.8, 5.0, ntrainstruct)
-    testfusedstruct = np.random.uniform(0.8, 5.0, nteststruct)
+    fusedstruct = np.random.uniform(0.4, 15.0, ntrainstruct)
+    testfusedstruct = np.random.uniform(0.4, 15.0, nteststruct)
     fusedstruct = fusedstruct.astype(np.float32)
     testfusedstruct = testfusedstruct.astype(np.float32)
     exactlist = lj(fusedstruct)
